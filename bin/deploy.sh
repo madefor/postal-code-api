@@ -14,7 +14,7 @@ fi
 
 mkdir deploy
 cd deploy
-git clone https://${GH_REF}
+git clone https://${GH_REF} .
 git checkout origin/gh-pages
 cp ../README.md ./
 rsync -avz ../api/ api/
