@@ -1,4 +1,4 @@
-# 郵便番号API v1-beta
+# 郵便番号API BETA
 
 [![Build Status](https://travis-ci.org/miya0001/postal-code-api.svg?branch=master)](https://travis-ci.org/miya0001/postal-code-api)
 
