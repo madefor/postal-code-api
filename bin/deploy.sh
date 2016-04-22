@@ -16,8 +16,8 @@ rm -fr .git
 rm -f .gitignore
 
 git init
-git config user.name "Travis CI"
-git config user.email "miya+github.com@wpist.me"
+git config user.name $GIT_USER
+git config user.email $GIT_EMAIL
 git add api
 git add README.md
 git commit --quiet -m "Deploy from travis"
