@@ -5,14 +5,14 @@
 ## エンドポイント
 
 ```
-http://miya0001.github.io/postal-code-api/api/v1/
+https://miya0001.github.io/postal-code-api/api/v1/
 ```
 
 ## 使い方
 
 郵便番号が`100-0014`(東京都千代田区永田町)の住所を取得したい場合。
 
-http://miya0001.github.io/postal-code-api/api/v1/100/0014.json
+https://miya0001.github.io/postal-code-api/api/v1/100/0014.json
 
 ```
 {
