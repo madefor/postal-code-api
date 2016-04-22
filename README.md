@@ -28,7 +28,7 @@ https://miya0001.github.io/postal-code-api/api/v1/100/0014.json
   "en": {
     "prefecture": "TOKYO TO",
     "address1": "CHIYODA KU",
-    "address2": "NAGATACHO (TSUGINOBIRUONOZOKU)"
+    "address2": "NAGATACHO"
   }
 }
 ```
