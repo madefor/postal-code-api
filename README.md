@@ -18,9 +18,16 @@ https://miya0001.github.io/postal-code-api/api/v1/100/0014.json
 {
   "zipcode": "1000014",
   "prefcode": "13",
-  "prefecture": "東京都",
-  "address1": "千代田区",
-  "address2": "永田町　"
+  "ja": {
+    "prefecture": "東京都",
+    "address1": "千代田区",
+    "address2": "永田町"
+  },
+  "en": {
+    "prefecture": "TOKYO TO",
+    "address1": "CHIYODA KU",
+    "address2": "NAGATACHO (TSUGINOBIRUONOZOKU)"
+  }
 }
 ```
 
