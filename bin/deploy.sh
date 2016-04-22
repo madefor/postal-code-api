@@ -12,13 +12,11 @@ if [[ "master" != "$TRAVIS_BRANCH" ]]; then
 	exit
 fi
 
-rm -fr .git
-rm -f .gitignore
-
-git init
-git config user.name "Travis CI"
-git config user.email "miya+github.com@wpist.me"
-git add api
-git add README.md
+mkdir deploy
+cd deploy
+git clone https://${GH_TOKEN}@${GH_REF}
+git checkout gh-pages
+cp ../README.md ./
+rsync -avz ../api/ api/
 git commit --quiet -m "Deploy from travis"
-git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
+git push --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
