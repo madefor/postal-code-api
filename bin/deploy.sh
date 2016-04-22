@@ -16,6 +16,8 @@ mkdir deploy
 cd deploy
 git clone https://${GH_REF} .
 git checkout origin/gh-pages
+git config user.name $GIT_USER
+git config user.email $GIT_EMAIL
 cp ../README.md ./
 rsync -az ../api/ api/
 git commit --quiet -m "Deploy from travis"
