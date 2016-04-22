@@ -17,6 +17,6 @@ cd deploy
 git clone https://${GH_REF} .
 git checkout origin/gh-pages
 cp ../README.md ./
-rsync -avz ../api/ api/
+rsync -az ../api/ api/
 git commit --quiet -m "Deploy from travis"
 git push --quiet "https://${GH_TOKEN}@${GH_REF}" origin gh-pages > /dev/null 2>&1
