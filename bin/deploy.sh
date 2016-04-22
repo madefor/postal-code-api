@@ -19,6 +19,7 @@ git checkout origin/gh-pages
 git config user.name $GIT_USER
 git config user.email $GIT_EMAIL
 cp ../README.md ./
-rsync -az ../api/ api/
+rsync -az --delete --checksum ../api/ api/
+git add .
 git commit --quiet -m "Deploy from travis"
 git push --quiet "https://${GH_TOKEN}@${GH_REF}" origin gh-pages > /dev/null 2>&1
