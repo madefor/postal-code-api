@@ -5,17 +5,19 @@ var download = require( 'gulp-download' );
 var decompress = require( 'gulp-decompress' );
 var convertEncoding = require( 'gulp-convert-encoding' );
 var chmod = require( 'gulp-chmod' );
-var p2j = require( './lib/glup-p2j.js' );
+var v1 = require( './lib/v1.js' );
 
-gulp.task( 'default', function () {
+gulp.task( 'v1', function () {
   return download( [
     'http://www.post.japanpost.jp/zipcode/dl/roman/ken_all_rome.zip',
   ] )
   .pipe( decompress() )
   .pipe( convertEncoding( { from: "shift_jis", to: "utf-8" } ) )
-  .pipe( p2j() )
+  .pipe( v1() )
   .pipe( chmod( 644 ) )
   .pipe( gulp.dest( function( args ) {
     return 'api/v1';
   } ) );
 } );
+
+gulp.task( 'default', [ 'v1' ] );
