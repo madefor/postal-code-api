@@ -1,0 +1,19 @@
+{
+  "name": "postal-code-api",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "comma-separated-values": "^3.6.4",
+    "gulp": "^3.9.1",
+    "gulp-chmod": "^1.3.0",
+    "gulp-convert-encoding": "0.0.3",
+    "gulp-decompress": "^1.2.0",
+    "gulp-download": "0.0.1"
+  }
+}
