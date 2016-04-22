@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- '5.10'
+branches:
+  only:
+  - master
+before_script: bash ./bin/prepare.sh
+script:
+- ls -al api/v1
+after_success: bash ./bin/deploy.sh
+env:
+  global:
+  - GH_REF: github.com/miya0001/postal-code-api.git
+  - secure: jCj6buUAM/W7BMfK+DbFUmZTrRQxX6df2gyZ7pRPAh40GfBSbWgIx3Ftduyx0SKNxBexKzmMcSh1xxhZrakusfdKgBSacMTYHRn5eYk8b8vV64R0SzpnACcpf9fl9zFHpb9o92WAy/uZPlvzWVTcD4Plqgf32/q9vy1+1p0euPp46JfnvYfIibmypBAQZ5hl7+5N/LjftARp2OdrrQdg7PUGbbIZWZkjvBJemaM5DIGI1mvls34k/opuajtYh3HmpdlsCGhtMDs8K43DD5I+cjuSikYSAwXOj3fwQly/7WhUZn4tAmVu4yTEvwIwENUMeie+wBI4NUzFz92lZzzWbCrxROqwGdTcqxzfbTXJWQDoQ7jRgwRsMmkNNJLO2h6b8bdnNL2fejliRGfK4SD6CTPXQxjYxFYnnVXC/4Ce6terQm+b6Fl/M7b0iG/BHwiAxSeOeMN5mFAnNzW3SplbYNRoo8qCd+UVMqsACVuLkEFqfpokyvN2bazbTCmkQMJ1v2ln8YPTiteQpmmd/m1Qoraa/XO0i0BwxxzMr2jklmxulcXHBnRakWL684qgWUeZPs5LH1MVCpMsubgc/OIMHRjiBSt2Pnoupg/w/ikMleJYRRcKwnalQLroLv9TsTokPUNJap2Xxx5tv5iWWuan4UX+ZkuBPyIsGLCQJyMXKoY=
