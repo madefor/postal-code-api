@@ -13,6 +13,7 @@ if [[ "master" != "$TRAVIS_BRANCH" ]]; then
 fi
 
 rm -fr .git
+rm -f .gitignore
 
 git init
 git config user.name "Travis CI"
