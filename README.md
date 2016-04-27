@@ -1,20 +1,20 @@
 # 郵便番号API BETA
 
-[![Build Status](https://travis-ci.org/miya0001/postal-code-api.svg?branch=master)](https://travis-ci.org/miya0001/postal-code-api)
+[![Build Status](https://travis-ci.org/madefor/postal-code-api.svg?branch=master)](https://travis-ci.org/madefor/postal-code-api)
 
 このAPIはまだテスト中です。
 
 ## エンドポイント
 
 ```
-https://miya0001.github.io/postal-code-api/api/v1/
+https://madefor.github.io/postal-code-api/api/v1/
 ```
 
 ## 使い方
 
 郵便番号が`100-0014`(東京都千代田区永田町)の住所を取得したい場合。
 
-https://miya0001.github.io/postal-code-api/api/v1/100/0014.json
+https://madefor.github.io/postal-code-api/api/v1/100/0014.json
 
 ```
 {
@@ -47,7 +47,7 @@ https://miya0001.github.io/postal-code-api/api/v1/100/0014.json
 このリポジトリをcloneしてください。
 
 ```
-$ git@github.com:miya0001/postal-code-api.git
+$ git@github.com:madefor/postal-code-api.git
 ```
 
 必要なモジュールをインストールしてください。
