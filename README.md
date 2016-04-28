@@ -35,6 +35,41 @@ https://madefor.github.io/postal-code-api/api/v1/100/0014.json
 }
 ```
 
+1つの郵便番号に複数の住所がある場合は以下のような感じです。
+
+```json
+{
+  "code": "6180000",
+  "prefcode": "26",
+  "address": [
+    {
+      "ja": {
+        "prefecture": "京都府",
+        "address1": "乙訓郡大山崎町",
+        "address2": ""
+      },
+      "en": {
+        "prefecture": "Kyoto",
+        "address1": "Oyamazaki-cho, Otokuni-gun",
+        "address2": ""
+      }
+    },
+    {
+      "ja": {
+        "prefecture": "大阪府",
+        "address1": "三島郡島本町",
+        "address2": ""
+      },
+      "en": {
+        "prefecture": "Osaka",
+        "address1": "Shimamoto-cho, Mishima-gun",
+        "address2": ""
+      }
+    }
+  ]
+}
+```
+
 ## 仕組み
 
 * Gulpタスクで以下の処理を行っています。
