@@ -23,12 +23,16 @@ https://madefor.github.io/postal-code-api/api/v1/100/0014.json
       "ja": {
         "prefecture": "東京都",
         "address1": "千代田区",
-        "address2": "永田町"
+        "address2": "永田町",
+        "address3": "",
+        "address4": ""
       },
       "en": {
         "prefecture": "Tokyo",
         "address1": "Chiyoda-ku",
-        "address2": "Nagatacho"
+        "address2": "Nagatacho",
+        "address3": "",
+        "address4": ""
       }
     }
   ]
@@ -48,12 +52,16 @@ https://madefor.github.io/postal-code-api/api/v1/618/0000.json
       "ja": {
         "prefecture": "京都府",
         "address1": "乙訓郡大山崎町",
-        "address2": ""
+        "address2": "",
+        "address3": "",
+        "address4": ""
       },
       "en": {
         "prefecture": "Kyoto",
         "address1": "Oyamazaki-cho, Otokuni-gun",
-        "address2": ""
+        "address2": "",
+        "address3": "",
+        "address4": ""
       }
     },
     {
@@ -61,12 +69,96 @@ https://madefor.github.io/postal-code-api/api/v1/618/0000.json
       "ja": {
         "prefecture": "大阪府",
         "address1": "三島郡島本町",
-        "address2": ""
+        "address2": "",
+        "address3": "",
+        "address4": ""
       },
       "en": {
         "prefecture": "Osaka",
         "address1": "Shimamoto-cho, Mishima-gun",
-        "address2": ""
+        "address2": "",
+        "address3": "",
+        "address4": ""
+      }
+    }
+  ]
+}
+```
+
+大口事業所個別番号では英語の住所は空になっています。
+
+https://madefor.github.io/postal-code-api/api/v1/100/8798.json
+
+```json
+{
+  "code": "1008798",
+  "data": [
+    {
+      "prefcode": "13",
+      "ja": {
+        "prefecture": "東京都",
+        "address1": "千代田区",
+        "address2": "霞が関",
+        "address3": "１丁目３－２",
+        "address4": "株式会社 ゆうちょ銀行"
+      },
+      "en": {
+        "prefecture": "",
+        "address1": "",
+        "address2": "",
+        "address3": "",
+        "address4": ""
+      }
+    },
+    {
+      "prefcode": "13",
+      "ja": {
+        "prefecture": "東京都",
+        "address1": "千代田区",
+        "address2": "霞が関",
+        "address3": "１丁目３－２",
+        "address4": "株式会社 かんぽ生命"
+      },
+      "en": {
+        "prefecture": "",
+        "address1": "",
+        "address2": "",
+        "address3": "",
+        "address4": ""
+      }
+    },
+    {
+      "prefcode": "13",
+      "ja": {
+        "prefecture": "東京都",
+        "address1": "千代田区",
+        "address2": "霞が関",
+        "address3": "１丁目３－２",
+        "address4": "日本郵政 株式会社"
+      },
+      "en": {
+        "prefecture": "",
+        "address1": "",
+        "address2": "",
+        "address3": "",
+        "address4": ""
+      }
+    },
+    {
+      "prefcode": "13",
+      "ja": {
+        "prefecture": "東京都",
+        "address1": "千代田区",
+        "address2": "霞が関",
+        "address3": "１丁目３－２",
+        "address4": "日本郵便 株式会社 本社"
+      },
+      "en": {
+        "prefecture": "",
+        "address1": "",
+        "address2": "",
+        "address3": "",
+        "address4": ""
       }
     }
   ]
