@@ -58,7 +58,7 @@ $ npm install
 以下のコマンドでAPIを生成してください。
 
 ```
-$ npm run-a build
+$ npm run build
 ```
 
 ## バグレポート
