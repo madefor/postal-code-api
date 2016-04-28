@@ -16,7 +16,7 @@ https://madefor.github.io/postal-code-api/api/v1/100/0014.json
 
 ```json
 {
-  "zipcode": "1000014",
+  "code": "1000014",
   "prefcode": "13",
   "ja": {
     "prefecture": "東京都",
