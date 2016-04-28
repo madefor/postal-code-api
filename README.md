@@ -75,7 +75,7 @@ https://madefor.github.io/postal-code-api/api/v1/618/0000.json
 
 ## 仕様
 
-* 大口事業所個別番号データには対応していません。
+* 大口事業所個別番号データは英語には対応していません。
 * Gulpタスクで以下の処理を行っています。
   1. [日本郵便のウェブサイト](http://www.post.japanpost.jp/zipcode/)から[郵便番号データ](http://www.post.japanpost.jp/zipcode/dl/roman-zip.html)をダウンロード。
   2. ダウンロードしたファイルを解凍して、取り出したCSVをパース。

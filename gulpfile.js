@@ -6,6 +6,7 @@ var decompress = require( 'gulp-decompress' );
 var convertEncoding = require( 'gulp-convert-encoding' );
 var chmod = require( 'gulp-chmod' );
 var postal2json = require( './lib/postal2json.js' );
+var jigyosyo2json = require( './lib/jigyosyo2json.js' );
 var v1 = require( './lib/v1.js' );
 
 /**
@@ -34,4 +35,12 @@ gulp.task( 'v1', function () {
   .pipe( gulp.dest( 'api/v1' ) );
 } );
 
-gulp.task( 'default', [ 'v1' ] );
+gulp.task( 'v1-jigyosyo', function () {
+  return getZipCodeCSV( [ 'http://www.post.japanpost.jp/zipcode/dl/jigyosyo/zip/jigyosyo.zip' ] )
+  .pipe( jigyosyo2json() )
+  .pipe( v1() )
+  .pipe( chmod( 644 ) )
+  .pipe( gulp.dest( 'api/v1' ) );
+} );
+
+gulp.task( 'default', [ 'v1', 'v1-jigyosyo' ] );
