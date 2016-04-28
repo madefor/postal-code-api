@@ -37,6 +37,8 @@ https://madefor.github.io/postal-code-api/api/v1/100/0014.json
 
 1つの郵便番号に複数の住所がある場合は以下のような感じです。
 
+https://madefor.github.io/postal-code-api/api/v1/618/0000.json
+
 ```json
 {
   "code": "6180000",
