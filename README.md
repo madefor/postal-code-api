@@ -40,9 +40,9 @@ https://madefor.github.io/postal-code-api/api/v1/100/0014.json
 ```json
 {
   "code": "6180000",
-  "prefcode": "26",
-  "address": [
+  "data": [
     {
+      "prefcode": "26",
       "ja": {
         "prefecture": "京都府",
         "address1": "乙訓郡大山崎町",
@@ -55,6 +55,7 @@ https://madefor.github.io/postal-code-api/api/v1/100/0014.json
       }
     },
     {
+      "prefcode": "27",
       "ja": {
         "prefecture": "大阪府",
         "address1": "三島郡島本町",
