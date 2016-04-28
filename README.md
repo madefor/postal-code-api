@@ -17,9 +17,9 @@ https://madefor.github.io/postal-code-api/api/v1/100/0014.json
 ```json
 {
   "code": "1000014",
-  "prefcode": "13",
   "data": [
     {
+      "prefcode": "13",
       "ja": {
         "prefecture": "東京都",
         "address1": "千代田区",
