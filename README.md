@@ -61,10 +61,11 @@ $ npm install
 $ npm run build
 ```
 
-## バグレポート
+## 貢献
 
 * バグレポートは[Issue](https://github.com/madefor/postal-code-api/issues)にお願いします。
 * プルリクエストは大歓迎です。
+* Starをつけてもらうと開発者たちのモチベーションが上がります。
 
 ## ライセンス
 
