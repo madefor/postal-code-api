@@ -1,8 +1,6 @@
-# 郵便番号API BETA
+# 郵便番号API
 
 [![Build Status](https://travis-ci.org/madefor/postal-code-api.svg?branch=master)](https://travis-ci.org/madefor/postal-code-api)
-
-このAPIはまだテスト中です。
 
 ## エンドポイント
 
@@ -16,7 +14,7 @@ https://madefor.github.io/postal-code-api/api/v1/
 
 https://madefor.github.io/postal-code-api/api/v1/100/0014.json
 
-```
+```json
 {
   "zipcode": "1000014",
   "prefcode": "13",
@@ -26,9 +24,9 @@ https://madefor.github.io/postal-code-api/api/v1/100/0014.json
     "address2": "永田町"
   },
   "en": {
-    "prefecture": "TOKYO TO",
-    "address1": "CHIYODA KU",
-    "address2": "NAGATACHO"
+    "prefecture": "Tokyo",
+    "address1": "Chiyoda-ku",
+    "address2": "Nagatacho"
   }
 }
 ```
@@ -60,12 +58,13 @@ $ npm install
 以下のコマンドでAPIを生成してください。
 
 ```
-$ npm run build
+$ npm run-a build
 ```
 
-## 注意事項
+## バグレポート
 
-このAPIは、まだテスト中です。エンドポイントのURLが変更になる可能性があります。
+* バグレポートは[Issue](https://github.com/madefor/postal-code-api/issues)にお願いします。
+* プルリクエストは大歓迎です。
 
 ## ライセンス
 
