@@ -18,16 +18,20 @@ https://madefor.github.io/postal-code-api/api/v1/100/0014.json
 {
   "code": "1000014",
   "prefcode": "13",
-  "ja": {
-    "prefecture": "東京都",
-    "address1": "千代田区",
-    "address2": "永田町"
-  },
-  "en": {
-    "prefecture": "Tokyo",
-    "address1": "Chiyoda-ku",
-    "address2": "Nagatacho"
-  }
+  "data": [
+    {
+      "ja": {
+        "prefecture": "東京都",
+        "address1": "千代田区",
+        "address2": "永田町"
+      },
+      "en": {
+        "prefecture": "Tokyo",
+        "address1": "Chiyoda-ku",
+        "address2": "Nagatacho"
+      }
+    }
+  ]
 }
 ```
 
