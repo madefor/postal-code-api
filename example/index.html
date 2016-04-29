@@ -14,6 +14,13 @@
       {
         margin: 2em 0;
       }
+      .footer
+      {
+        margin-top: 40px;
+        padding-top: 1em;
+        border-top: 1px solid #dedede;
+        text-align: right;
+      }
     </style>
     <title>Postal Code API Example</title>
   </head>
@@ -21,8 +28,12 @@
     <div class="wrap">
       <h1>Postal Code API</h1>
 
-      <div>郵便番号を入力してください。<br />
-        <input type="text" placeholder="100-0014" ng-model="code"><button ng-click="click()">住所を取得</button></div>
+      <div class="form-inline">
+      <span class="help-block" style="display: block;">郵便番号を入力してください。</span>
+      <input type="text" class="form-control" placeholder="1000014 or 100-0014" ng-model="code" ng-change="input()"> <button ng-click="click()" class="btn btn-primary">住所を取得</button>
+      </div>
+
+      <div ng-if="error" class="alert alert-danger">住所が見つかりませんでした。</div>
 
       <div ng-if="url"><strong>Endpoint:</strong> <a ng-href="{{ url }}">{{ url }}</a></div>
 
@@ -36,7 +47,7 @@
 
       <div ng-if="json"><pre>{{ json }}</pre></div>
 
-      <div><a href="https://github.com/madefor/postal-code-api/">Postal Code API by Made for _____ Team</a></div>
+      <div class="footer"><a href="https://github.com/madefor/postal-code-api/">Postal Code API by Made for _____ Team</a></div>
 
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
       <script type="text/javascript">
@@ -44,15 +55,26 @@
       .service('getAddress', ['$http', function ($http) {
         this.getdata = function (url, code, callback) {
           $http({
-              url: url,
-              method: 'GET'
+            url: url,
+            method: 'GET'
           })
           .success(function (data, status, headers, config) {
-              callback(data);
+            callback(data);
+          })
+          .error(function () {
+            callback({error: true});
           })
         };
       }])
       .controller('app', ['$scope', 'getAddress', function ($scope, getAddress) {
+        $scope.input = function() {
+          if ( $scope.code && $scope.code.match( /^[0-9]{3}\-?[0-9]{4}$/ ) ) {
+            angular.element( document ).find( 'button' ).attr( 'disabled', false );
+          } else {
+            angular.element( document ).find( 'button' ).attr( 'disabled', true );
+          }
+        }
+
         $scope.click = function () {
           if ( ! $scope.code || ! $scope.code.match( /^[0-9]{3}\-?[0-9]{4}$/ ) ) {
             return;
@@ -64,8 +86,16 @@
           $scope.url = endpoint + code1 +'/' + code2 + '.json';
 
           getAddress.getdata( $scope.url, $scope.code, function (res) {
-            $scope.json = json = JSON.stringify( res, null, "    " );
-            $scope.data = res.data;
+            if ( res.error ) {
+              $scope.error = true;
+              $scope.json = "";
+              $scope.data = [];
+              $scope.url = "";
+            } else {
+              $scope.json = json = JSON.stringify( res, null, "    " );
+              $scope.data = res.data;
+              $scope.error = false;
+            }
           });
         }
       }]);
