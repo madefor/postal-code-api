@@ -30,7 +30,7 @@
 
       <div class="form-inline">
       <span class="help-block" style="display: block;">郵便番号を入力してください。</span>
-      <input type="text" class="form-control" placeholder="例: 01000014 または 100-0014" ng-model="code" ng-change="input()"> <button ng-click="click()" class="btn btn-primary">住所を取得</button>
+      <input type="text" class="form-control" placeholder="例: 01000014" ng-model="code" ng-change="input()"> <button ng-click="click()" class="btn btn-primary">住所を取得</button>
       </div>
 
       <div ng-if="error" class="alert alert-danger">住所が見つかりませんでした。</div>
@@ -47,7 +47,7 @@
 
       <div ng-if="json"><pre>{{ json }}</pre></div>
 
-      <div class="footer"><a href="https://github.com/madefor/postal-code-api/">Postal Code API by Made for _____ Team</a></div>
+      <div class="footer"><a href="https://github.com/madefor/postal-code-api/">Postal Code API</a> by <a href="https://github.com/madefor">Made for _____ Team</a></div>
 
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
       <script type="text/javascript">
