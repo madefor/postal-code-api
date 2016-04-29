@@ -33,11 +33,11 @@
       <input type="text" class="form-control" placeholder="例: 1000014" ng-model="code" ng-change="input()"> <button ng-click="click()" class="btn btn-primary">住所を取得</button>
       </div>
 
-      <div ng-if="error" class="alert alert-danger">住所が見つかりませんでした。</div>
+      <div ng-if="data.error" class="alert alert-danger">住所が見つかりませんでした。</div>
 
-      <div ng-if="url"><strong>Endpoint:</strong> <a ng-href="{{ url }}">{{ url }}</a></div>
+      <div ng-if="! data.error &amp;&amp; !! data.url"><strong>Endpoint:</strong> <a ng-href="{{ data.url }}">{{ data.url }}</a></div>
 
-      <div ng-repeat="address in data">
+      <div ng-repeat="address in data.addresses">
         <table class="table table-striped">
           <tr><th></th><th>prefecture</th><th>address1</th><th>address2</th><th>address3</th><th>address4</th></tr>
           <tr><th>ja</th><td>{{ address.ja.prefecture }}</td><td>{{ address.ja.address1 }}</td><td>{{ address.ja.address2 }}</td><td>{{ address.ja.address3 }}</td><td>{{ address.ja.address4 }}</td></tr>
@@ -45,7 +45,7 @@
         </table>
       </div>
 
-      <div ng-if="json"><pre>{{ json }}</pre></div>
+      <div ng-if="data.json"><pre>{{ data.json }}</pre></div>
 
       <div class="footer"><a href="https://github.com/madefor/postal-code-api/">Postal Code API</a> by <a href="https://github.com/madefor">Made for _____ Team</a></div>
 
@@ -53,7 +53,7 @@
       <script type="text/javascript">
       angular.module('myapp', [])
       .service('getAddress', ['$http', function ($http) {
-        this.getdata = function (url, code, callback) {
+        this.getdata = function (url, callback) {
           $http({
             url: url,
             method: 'GET'
@@ -68,10 +68,10 @@
       }])
       .controller('app', ['$scope', 'getAddress', function ($scope, getAddress) {
         $scope.input = function() {
-          if ( $scope.code && $scope.code.match( /^[0-9]{3}\-?[0-9]{4}$/ ) ) {
-            angular.element( document ).find( 'button' ).attr( 'disabled', false );
+          if ($scope.code && $scope.code.match(/^[0-9]{3}\-?[0-9]{4}$/)) {
+            angular.element(document).find('button').attr('disabled', false);
           } else {
-            angular.element( document ).find( 'button' ).attr( 'disabled', true );
+            angular.element(document).find('button').attr('disabled', true);
           }
         }
 
@@ -80,21 +80,19 @@
             return;
           }
 
-          var endpoint = 'https://madefor.github.io/postal-code-api/api/v1/';
-          var code1 = $scope.code.replace( /^([0-9]{3}).*/, "$1" );
-          var code2 = $scope.code.replace( /.*([0-9]{4})$/, "$1" );
-          $scope.url = endpoint + code1 +'/' + code2 + '.json';
+          var endpoint = 'https://madefor.github.io/postal-code-api/api/v1';
+          var code1 = $scope.code.replace(/^([0-9]{3}).*/, "$1");
+          var code2 = $scope.code.replace(/.*([0-9]{4})$/, "$1");
 
-          getAddress.getdata( $scope.url, $scope.code, function (res) {
-            if ( res.error ) {
-              $scope.error = true;
-              $scope.json = "";
-              $scope.data = [];
-              $scope.url = "";
+          $scope.data = {};
+          $scope.data.url = endpoint + '/' + code1 +'/' + code2 + '.json';
+
+          getAddress.getdata($scope.data.url, function (res) {
+            if (res.error) {
+              $scope.data.error = true;
             } else {
-              $scope.json = json = JSON.stringify( res, null, "    " );
-              $scope.data = res.data;
-              $scope.error = false;
+              $scope.data.json = json = JSON.stringify( res, null, "    " );
+              $scope.data.addresses = res.data;
             }
           });
         }
