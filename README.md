@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/madefor/postal-code-api.svg?branch=master)](https://travis-ci.org/madefor/postal-code-api)
 
-この郵便番号APIはGitHubページを使用してスタティックなファイルで配信しているため信頼性が高く、オープンソースであるためクライアントワークでも安心して使用できます。
+この郵便番号APIはGitHubページを使用して静的なファイルで配信しているため信頼性が高く、さらにオープンソースなのでクライアントワークでも安心して使用できます。
 
 また、郵便番号から英語の住所を取得することも可能です。（大口事業所個別番号は英語には対応していません。）
 

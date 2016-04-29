@@ -21,7 +21,8 @@
     <div class="wrap">
       <h1>Postal Code API</h1>
 
-      <div><input type="text" ng-model="code"><button ng-click="click()">住所を取得</button></div>
+      <div>郵便番号を入力してください。<br />
+        <input type="text" placeholder="100-0014" ng-model="code"><button ng-click="click()">住所を取得</button></div>
 
       <div ng-if="url"><strong>Endpoint:</strong> <a ng-href="{{ url }}">{{ url }}</a></div>
 
