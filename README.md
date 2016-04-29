@@ -1,4 +1,4 @@
-# 郵便番号API
+# 郵便番号 API
 
 [![Build Status](https://travis-ci.org/madefor/postal-code-api.svg?branch=master)](https://travis-ci.org/madefor/postal-code-api)
 
