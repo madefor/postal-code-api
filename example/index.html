@@ -22,12 +22,14 @@
         text-align: right;
       }
     </style>
-    <title>郵便番号 API Demo</title>
+    <title>郵便番号 API</title>
   </head>
   <body ng-controller="app">
     <div class="wrap">
-      <h1>Postal Code API</h1>
+      <h1>郵便番号 API</h1>
+      <p>この郵便番号APIはGitHubページを使用して静的なファイルで配信しているため信頼性が高く、さらにオープンソースなのでクライアントワークでも安心して使用できます。</p>
 
+      <p>また、郵便番号から英語の住所を取得することも可能です。（大口事業所個別番号は英語には対応していません。）</p>
       <div class="form-inline">
       <span class="help-block" style="display: block;">郵便番号を入力してください。</span>
       <input type="text" class="form-control" placeholder="例: 1000014" ng-model="code" ng-change="input()"> <button ng-click="click()" class="btn btn-primary">住所を取得</button>
