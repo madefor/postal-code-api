@@ -6,6 +6,8 @@
 
 また、郵便番号から英語の住所を取得することも可能です。（大口事業所個別番号は英語には対応していません。）
 
+なお、このAPIはAWSのLambdaを使用して毎日更新しています。
+
 ## デモ
 https://madefor.github.io/postal-code-api/
 
@@ -181,6 +183,7 @@ https://madefor.github.io/postal-code-api/api/v1/100/8798.json
   3. 郵便番号の上3桁の名前を持つディレクトリを作り、その中に下4桁の名前を持つJSONを作成。
 * 上述の処理をTravis CIで実行し、その結果をgh-pagesにpushしています。
   * 郵便番号データの最後の行にある沖縄県八重山郡与那国町のJSONがあるかどうかをチェックし、すべてのJSONが生成されたものとしています。いいテスト方法があればぜひプルリクエストをお願いします。
+* AWSのLambdaを使用して毎日更新しています。（[参考](https://github.com/miya0001/travis-builder-for-lambda)）
 
 ## ローカルでJSONデータを作成する
 
