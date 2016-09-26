@@ -206,6 +206,12 @@ $ npm install
 $ npm run build
 ```
 
+ローカルでAPIを動かしたい場合には以下のコマンドを実行してください。
+
+```
+$ npm start
+```
+
 ## 貢献
 
 * バグレポートは[Issue](https://github.com/madefor/postal-code-api/issues)にお願いします。
