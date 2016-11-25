@@ -20,6 +20,8 @@ git config user.name $GIT_USER
 git config user.email $GIT_EMAIL
 git add api
 git add README.md
+touch .nojekyll
+git add .nojekyll
 cp example/index.html ./
 git add index.html
 git commit --quiet -m "Deploy from travis"
