@@ -6,7 +6,7 @@ branches:
   - master
 before_script: bash ./bin/prepare.sh
 script:
-- ls -al api/v1/907/1801.json
+- npm test
 after_success: bash ./bin/deploy.sh
 env:
   global:

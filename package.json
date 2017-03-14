@@ -5,7 +5,7 @@
   "scripts": {
     "start": "http-server -c1 -o",
     "build": "gulp",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node tests/test.js"
   },
   "author": "",
   "license": "MIT",
