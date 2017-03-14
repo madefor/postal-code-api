@@ -9,7 +9,6 @@ fs.readFile( 'api/KEN_ALL_ROME.CSV', 'utf8', ( err, data ) => {
     cast: [ 'String', 'String', 'String', 'String', 'String', 'String', 'String' ]
   } ).parse();
 
-  const postal_codes = []
   for ( var i = 0; i < res.length; i++ ) {
     const p = res[i][0].trim()
     fs.statSync( path.join( 'api', 'v1',
