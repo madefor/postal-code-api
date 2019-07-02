@@ -25,7 +25,7 @@ gulp.task( 'download', function () {
  * Create an API of the postal code.
  */
 gulp.task( 'v1', [ 'download' ], function () {
-  gulp.src( 'api/KEN_ALL_ROME.CSV' )
+  gulp.src( 'api/KEN_ALL_ROME.CSV.CSV' )
     .pipe( postal2json() )
     .pipe( v1() )
     .pipe( chmod( 644 ) )
