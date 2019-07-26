@@ -2,7 +2,7 @@ const csv = require( 'comma-separated-values' );
 const fs = require( 'fs' )
 const path = require( 'path' )
 
-fs.readFile( 'api/KEN_ALL_ROME.CSV.CSV', 'utf8', ( err, data ) => {
+fs.readFile( 'api/KEN_ALL_ROME.CSV', 'utf8', ( err, data ) => {
   if (err) throw err;
 
   const res = new csv( data, {
