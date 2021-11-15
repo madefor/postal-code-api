@@ -1,0 +1,24 @@
+name: update
+on:
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  update-data:
+    uns-on: ubuntu-latest
+    steps:
+      - run: set -e
+      - run: npm install
+      - run: npm run build
+      - run: rm -fr .git
+      - run: rm -f .gitignore
+      - run: git init
+      - run: git config user.name $GIT_USER
+      - run: git config user.email $GIT_EMAIL
+      - run: git add README.md
+      - run: touch .nojekyll
+      - run: git add .nojekyll
+      - run: cp example/index.html ./
+      - run: git add index.html
+      - run: git add .github/workflows/update.yml
+      - run: git commit --quiet -m "Deploy from git action"
+      - run: git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
