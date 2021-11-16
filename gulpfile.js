@@ -18,7 +18,7 @@ gulp.task("download", () => {
     .pipe(decompress())
     .pipe(convertEncoding({ from: "shift_jis", to: "utf-8" }))
     .pipe(chmod(644))
-    .pipe(gulp.dest("api"));
+    .pipe(gulp.dest("lib/api"));
 });
 
 /**
@@ -26,13 +26,13 @@ gulp.task("download", () => {
  */
 gulp.task(
   "v1",
-  gulp.series("download", () => {
+  gulp.series("download", function () {
     return gulp
-      .src("api/KEN_ALL_ROME.CSV")
+      .src("lib/api/KEN_ALL_ROME.CSV")
       .pipe(postal2json())
       .pipe(v1())
       .pipe(chmod(644))
-      .pipe(gulp.dest("api/v1"));
+      .pipe(gulp.dest("lib/api/v1"));
   })
 );
 
@@ -41,13 +41,13 @@ gulp.task(
  */
 gulp.task(
   "v1-jigyosyo",
-  gulp.series("download", () => {
+  gulp.series("download", function () {
     return gulp
-      .src("api/JIGYOSYO.CSV")
+      .src("lib/api/JIGYOSYO.CSV")
       .pipe(jigyosyo2json())
       .pipe(v1())
       .pipe(chmod(644))
-      .pipe(gulp.dest("api/v1"));
+      .pipe(gulp.dest("lib/api/v1"));
   })
 );
 
